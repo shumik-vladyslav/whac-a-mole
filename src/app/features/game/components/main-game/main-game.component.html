@@ -1,0 +1,9 @@
+<div class="game-board">
+    @for (hole of holes; track hole) {
+    <div class="hole">
+        @if (hole.active) {
+        <div class="mole"></div>
+        }
+    </div>
+    }
+</div>
