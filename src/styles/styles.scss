@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./button.scss";
+@import "./variables.scss";
+
+body {
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+}

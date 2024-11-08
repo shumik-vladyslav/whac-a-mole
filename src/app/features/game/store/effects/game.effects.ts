@@ -7,7 +7,6 @@ import {
   takeUntil,
   withLatestFrom,
   switchMap,
-  tap,
   expand,
 } from 'rxjs/operators';
 import * as GameActions from '../actions/game.actions';
@@ -60,7 +59,6 @@ export class GameEffects {
           ? of(GameActions.updateHoles({ holes: this.generateHoles() }))
           : EMPTY
       ),
-      tap((s) => console.log(s)),
       takeUntil(this.gameStop$),
     );
   }

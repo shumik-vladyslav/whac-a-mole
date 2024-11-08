@@ -1,0 +1,46 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/mixins.scss";
+
+:host {
+    display: block;
+    height: 100vh;
+}
+
+.game-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $main-wrap-gap;
+    padding-top: $main-wrap-padding-top;
+
+    .fields-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(0.75rem, 2vw, 2rem);
+
+        h1 {
+            @include main-title;
+        }
+
+        .field {
+            @include field-text;
+        }
+    }
+
+    .start-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: clamp(1rem, 2vw, 2rem);
+        cursor: pointer;
+        color: $white;
+        border: none;
+        border-radius: 1.25rem;
+        background-color: $primary-green;
+        transition: $button-transition;
+
+        &:hover {
+            background-color: $hover-green;
+        }
+    }
+}

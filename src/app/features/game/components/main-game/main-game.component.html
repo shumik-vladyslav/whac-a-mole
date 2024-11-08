@@ -1,9 +1,18 @@
 <div class="game-board">
-    @for (hole of holes; track hole.id) {
-    <div class="hole" (click)="whack(hole.id)">
-        @if (hole.active) {
-        <div class="mole"></div>
+    <div class="fields-container">
+        <div class="field">High Score: {{ score }}</div>
+        <div class="time-field">Time: {{ timeLeft }}</div>
+    </div>
+    <div class="game-container">
+        @for (hole of holes; track hole.id) {
+        <div class="hole" (click)="whack(hole.id)" [class.active]="hole.active">
+            @if (hole.active) {
+            <div class="mole">
+                Catch me!
+            </div>
+            }
+        </div>
         }
     </div>
-    }
+    <button class="danger-button" (click)="stopGameClicked()">Stop Game</button>
 </div>

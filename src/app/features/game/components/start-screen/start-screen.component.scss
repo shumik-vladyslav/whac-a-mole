@@ -1,0 +1,21 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/mixins.scss";
+
+:host {
+    display: block;
+    height: 100vh;
+}
+
+.game-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $main-wrap-gap;
+    padding-top: $main-wrap-padding-top;
+
+    .field {
+        @include field-text;
+    }
+
+}

@@ -1,0 +1,17 @@
+@mixin main-title {
+    font-size: clamp(2rem, 3.5vw, 4rem);
+    line-height: 1.4;
+    font-weight: 700;
+    margin: 0 0 1rem;
+}
+@mixin field-text {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+@mixin time-field-text {
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    line-height: 1.4;
+    font-weight: 700;
+}

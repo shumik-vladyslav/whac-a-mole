@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Hole } from '../../models/game';
 
 @Component({
@@ -8,6 +8,7 @@ import { Hole } from '../../models/game';
   imports: [CommonModule],
   templateUrl: './main-game.component.html',
   styleUrl: './main-game.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainGameComponent {
   @Input() holes: Hole[] | null = null;

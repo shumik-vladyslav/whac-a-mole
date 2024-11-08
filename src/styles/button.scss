@@ -1,0 +1,24 @@
+@import "./variables.scss";
+
+.success-button {
+    padding: 0.75rem 1.5rem;
+    font-size: clamp(1rem, 2vw, 2rem);
+    cursor: pointer;
+    color: $white;
+    border: none;
+    border-radius: 1.25rem;
+    background-color: $primary-green;
+    transition: $button-transition;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    &:hover {
+        background-color: $hover-green;
+    }
+}
+
+.danger-button {
+    @extend .success-button;
+    background-color: $primary-red;
+    &:hover {
+        background-color: $hover-red;
+    }
+}

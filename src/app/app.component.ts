@@ -7,6 +7,4 @@ import { SmartGameComponent } from './features/game/smart-game.component';
   imports: [SmartGameComponent],
   template: `<app-smart-game></app-smart-game>`,
 })
-export class AppComponent {
-  title = 'whack-a-mole';
-}
+export class AppComponent {}
