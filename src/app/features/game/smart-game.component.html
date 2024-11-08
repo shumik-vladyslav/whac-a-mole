@@ -1,1 +1,10 @@
-<app-main-game></app-main-game>
+@if (!(gameActive$ | async) && !(gameIsOver$ | async)) {
+<app-start-screen [highScore]="highScore$ | async" (startGame)="startGame()"></app-start-screen>
+}
+@if (gameActive$ | async) {
+<app-main-game [holes]="holes$ | async" [score]="score$ | async" [timeLeft]="timeLeft$ | async"
+    (whackHoleById)="whack($event)" (stopGame)="stopGame()"></app-main-game>
+}
+@if (gameIsOver$ | async) {
+<app-game-over [highScore]="highScore$ | async" [score]="score$ | async" (refreshGame)="refreshGame();"></app-game-over>
+}

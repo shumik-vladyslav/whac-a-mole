@@ -1,1 +1,8 @@
-<p>Game is over</p>
+<div>
+    <div>
+        <h1>Game is over</h1>
+        <div class="field">Your Score: {{ score }}</div>
+        <div class="field">High Score: {{ highScore }}</div>
+    </div>
+    <button (click)="tryAgainClicked()">Try Again</button>
+</div>

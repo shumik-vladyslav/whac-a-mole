@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Hole } from '../../models/game';
 
 @Component({
   selector: 'app-main-game',
@@ -9,10 +10,17 @@ import { Component, Input } from '@angular/core';
   styleUrl: './main-game.component.scss',
 })
 export class MainGameComponent {
-  @Input() holes = Array(9)
-    .fill(0)
-    .map((_, i) => {
-      if (i === 5) return  { id: i, active: true };
-      return { id: i, active: false };
-    });
+  @Input() holes: Hole[] | null = null;
+  @Input() timeLeft: number | null = null;
+  @Input() score: number | null = null;
+  @Output() stopGame: EventEmitter<void> = new EventEmitter();
+  @Output() whackHoleById : EventEmitter<number> = new EventEmitter();
+
+  public whack(holeId: number): void {
+    this.whackHoleById.emit(holeId);
+  }
+
+  public stopGameClicked(): void {
+    this.stopGame.emit();
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-start-screen',
@@ -8,9 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './start-screen.component.scss'
 })
 export class StartScreenComponent {
-
+  @Input() highScore: number | null = null;
+  @Output() startGame: EventEmitter<void> = new EventEmitter();
 
   public startGameClicked(): void {
-
+    this.startGame.emit();
   }
 }

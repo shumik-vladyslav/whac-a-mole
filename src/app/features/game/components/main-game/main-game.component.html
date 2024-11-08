@@ -1,6 +1,6 @@
 <div class="game-board">
-    @for (hole of holes; track hole) {
-    <div class="hole">
+    @for (hole of holes; track hole.id) {
+    <div class="hole" (click)="whack(hole.id)">
         @if (hole.active) {
         <div class="mole"></div>
         }
